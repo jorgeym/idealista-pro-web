@@ -1,0 +1,5 @@
+.phone-info, .phone-thumbnail {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20px;
+}
