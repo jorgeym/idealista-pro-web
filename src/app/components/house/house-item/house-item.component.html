@@ -1,0 +1,12 @@
+<div *ngIf="house">
+  <div class="house-thumbnail">
+    <img height="300" [src]="house.image" />
+  </div>
+
+  <div class="house-info">
+    <h2> {{ house.price }}</h2>
+    <h3> {{ house.houseType }} </h3>
+
+    <button class="btn btn-danger" (click)="onClickDelete()">Delete</button>
+  </div>
+</div>

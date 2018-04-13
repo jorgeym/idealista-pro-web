@@ -1,35 +1,35 @@
-import { CanLeavePhoneCreateGuard } from './shared/guards/can-leave-phone-create.guard';
-import { PhoneBaseComponent } from './components/phone/phone-base/phone-base.component';
-import { PhoneCreateComponent } from './components/phone/phone-create/phone-create.component';
-import { PhoneDetailsResolverGuard } from './shared/resolvers/phone-details-resolver.guard';
+import { CanLeaveHouseCreateGuard } from './shared/guards/can-leave-house-create.guard';
+import { HouseBaseComponent } from './components/house/house-base/house-base.component';
+import { HouseCreateComponent } from './components/house/house-create/house-create.component';
+import { HouseDetailsResolverGuard } from './shared/resolvers/house-details-resolver.guard';
 import { IsAuthenticatedGuard } from './shared/guards/is-authenticated.guard';
 import { SignupComponent } from './components/misc/signup/signup.component';
 import { LoginComponent } from './components/misc/login/login.component';
-import { PhoneItemComponent } from './components/phone/phone-item/phone-item.component';
-import { PhoneListComponent } from './components/phone/phone-list/phone-list.component';
+import { HouseItemComponent } from './components/house/house-item/house-item.component';
+import { HouseListComponent } from './components/house/house-list/house-list.component';
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
-    { path: '', redirectTo: 'phones', pathMatch: 'full'},
-    { path: 'phones', canActivate: [IsAuthenticatedGuard], component: PhoneListComponent},
+    { path: '', redirectTo: 'houses', pathMatch: 'full'},
+    { path: 'houses', canActivate: [IsAuthenticatedGuard], component: HouseListComponent},
     {
-        path: 'phones',
+        path: 'houses',
         canActivate: [IsAuthenticatedGuard],
-        component: PhoneBaseComponent,
+        component: HouseBaseComponent,
         children: [
             {
                 path: 'new',
                 canActivate: [IsAuthenticatedGuard],
-                canDeactivate: [CanLeavePhoneCreateGuard],
-                component: PhoneCreateComponent
+                canDeactivate: [CanLeaveHouseCreateGuard],
+                component: HouseCreateComponent
             },
             {
                 path: ':id',
                 canActivate: [IsAuthenticatedGuard],
                 resolve: {
-                    phone: PhoneDetailsResolverGuard
+                    house: HouseDetailsResolverGuard
                 },
-                component: PhoneItemComponent
+                component: HouseItemComponent
             }
         ]
     },

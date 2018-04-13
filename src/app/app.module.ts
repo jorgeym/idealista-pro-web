@@ -1,6 +1,6 @@
 import { GlobalErrorHandlerService } from './shared/services/global-error-handler.service';
-import { CanLeavePhoneCreateGuard } from './shared/guards/can-leave-phone-create.guard';
-import { PhoneDetailsResolverGuard } from './shared/resolvers/phone-details-resolver.guard';
+import { CanLeaveHouseCreateGuard } from './shared/guards/can-leave-house-create.guard';
+import { HouseDetailsResolverGuard } from './shared/resolvers/house-details-resolver.guard';
 import { IsAuthenticatedGuard } from './shared/guards/is-authenticated.guard';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler } from '@angular/core';
@@ -11,28 +11,28 @@ import { RouterModule } from '@angular/router';
 import './rxjs.operators';
 
 import { AppComponent } from './app.component';
-import { PhoneListComponent } from './components/phone/phone-list/phone-list.component';
-import { PhonesService } from './shared/services/phones.service';
+import { HouseListComponent } from './components/house/house-list/house-list.component';
+import { HousesService } from './shared/services/houses.service';
 import { SessionService } from './shared/services/session.service';
 import { routes } from './app.routes';
-import { PhoneItemComponent } from './components/phone/phone-item/phone-item.component';
+import { HouseItemComponent } from './components/house/house-item/house-item.component';
 import { LoginComponent } from './components/misc/login/login.component';
 import { NavbarComponent } from './components/misc/navbar/navbar.component';
 import { SignupComponent } from './components/misc/signup/signup.component';
 import { UsersService } from './shared/services/users.service';
-import { PhoneCreateComponent } from './components/phone/phone-create/phone-create.component';
-import { PhoneBaseComponent } from './components/phone/phone-base/phone-base.component';
+import { HouseCreateComponent } from './components/house/house-create/house-create.component';
+import { HouseBaseComponent } from './components/house/house-base/house-base.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PhoneListComponent,
-    PhoneItemComponent,
+    HouseListComponent,
+    HouseItemComponent,
     LoginComponent,
     NavbarComponent,
     SignupComponent,
-    PhoneCreateComponent,
-    PhoneBaseComponent
+    HouseCreateComponent,
+    HouseBaseComponent
   ],
   imports: [
     BrowserModule,
@@ -41,12 +41,12 @@ import { PhoneBaseComponent } from './components/phone/phone-base/phone-base.com
     RouterModule.forRoot(routes)
   ],
   providers: [
-    PhonesService,
+    HousesService,
     SessionService,
     UsersService,
     IsAuthenticatedGuard,
-    PhoneDetailsResolverGuard,
-    CanLeavePhoneCreateGuard,
+    HouseDetailsResolverGuard,
+    CanLeaveHouseCreateGuard,
     {
       provide: ErrorHandler,
       useClass: GlobalErrorHandlerService

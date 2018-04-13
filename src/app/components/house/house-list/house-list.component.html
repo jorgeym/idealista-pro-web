@@ -1,0 +1,11 @@
+<a [routerLink]="['/houses/new']">
+  <i class="fa fa-plus"></i>
+</a>
+<div class="row">
+  <div *ngFor="let house of houses" class="house col-xs-12 col-sm-3">
+    <img [src]="house.image" />
+    <h3> {{ house.price }} </h3>
+    <p> {{ house.houseType }} </p>
+    <a [routerLink]="['/houses', house.id]"> View Details </a>
+  </div>
+</div>

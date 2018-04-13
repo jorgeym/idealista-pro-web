@@ -1,0 +1,53 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+
+    <form (ngSubmit)="onSubmitHouse(houseForm)" #houseForm="ngForm">
+      <div class="form-group" [class.has-error]="houseType.errors && houseType.touched">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="fa fa-home"></i>
+          </span>
+          <input type="text" name="houseType" class="form-control" placeholder="houseType" [(ngModel)]="house.houseType" #houseType="ngModel" required>
+        </div>
+        <label class="control-label" *ngIf="houseType.errors && houseType.touched">
+          <ul>
+            <li *ngIf="houseType.errors.required">Required</li>
+          </ul>
+        </label>
+      </div>
+
+      <div class="form-group" [class.has-error]="price.errors && price.touched">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="fa fa-eur"></i>
+          </span>
+          <input type="text" name="price" class="form-control" placeholder="price" [(ngModel)]="house.price" #name="ngModel" required>
+        </div>
+        <label class="control-label" *ngIf="price.errors && price.touched">
+          <ul>
+            <li *ngIf="price.errors.required">Required</li>
+          </ul>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="fa fa-picture"></i>
+          </span>
+          <input type="file" name="name" class="form-control" #imageFile>
+        </div>
+      </div>
+
+      <div class="form-group" class="has-error" *ngIf="apiError">
+        <label class="control-label">
+          {{ apiError }}
+        </label>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn btn-block btn-primary" [disabled]="!houseForm.valid">Add House</button>
+      </div>
+    </form>
+  </div>
+</div>
