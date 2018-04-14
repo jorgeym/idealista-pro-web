@@ -25,6 +25,12 @@ export class HousesService extends BaseApiService {
       .catch(error => this.handleError(error));
   }
 
+  search(searchParams): Observable<any> { //duda con el observable
+    return this.http.post(`${HousesService.HOUSES_API}/search`, JSON.stringify(searchParams), BaseApiService.defaultOptions)
+      .map((res: Response) => res.json())
+      .catch(error => this.handleError(error));
+  }
+
   create(house: House): Observable<House> {
     return this.http.post(HousesService.HOUSES_API, house.asFormData(), new RequestOptions({ withCredentials: true }))
       .map((res: Response) => res.json())

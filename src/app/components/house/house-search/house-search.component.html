@@ -1,0 +1,64 @@
+<div class="row">
+
+
+  <form *ngIf="houseList && !houseList.length" (ngSubmit)="onSubmitHouseSearch()" #houseSearchForm="ngForm">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="fa fa-home"></i>
+          </span>
+          <input type="text" name="houseType" class="form-control" placeholder="houseType" [(ngModel)]="searchParams.houseType" #houseType="ngModel" required>
+        </div>
+        <label class="control-label" *ngIf="houseType.errors && houseType.touched">
+          <ul>
+            <li *ngIf="houseType.errors.required">Required</li>
+          </ul>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="fa fa-eur"></i>
+          </span>
+          <input type="number" name="priceMin" class="form-control" placeholder="Minimun price" [(ngModel)]="searchParams.priceMin" #priceMin="ngModel" required>
+        </div>
+        <label class="control-label" *ngIf="priceMin.errors && priceMin.touched">
+          <ul>
+            <li *ngIf="priceMin.errors.required">Required</li>
+          </ul>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="fa fa-eur"></i>
+          </span>
+          <input type="number" name="priceMax" class="form-control" placeholder="price" [(ngModel)]="searchParams.priceMax" #priceMax="ngModel" required>
+        </div>
+        <label class="control-label" *ngIf="priceMax.errors && priceMax.touched">
+          <ul>
+            <li *ngIf="priceMax.errors.required">Required</li>
+          </ul>
+        </label>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn btn-block btn-primary" [disabled]="!houseSearchForm.valid">Search</button>
+      </div>
+    </div>
+  </form>
+
+    <div *ngIf="houseList && houseList.length" class="row">
+      <div *ngFor="let house of houseList" class="house col-xs-12 col-sm-3">
+        <img [src]="house.image" />
+        <h3> {{ house.price }} </h3>
+        <p> {{ house.houseType }} </p>
+        <a [routerLink]="['/houses', house.id]"> View Details </a>
+      </div>
+    </div>
+
+
+</div>

@@ -21,7 +21,7 @@
           <span class="input-group-addon">
             <i class="fa fa-eur"></i>
           </span>
-          <input type="text" name="price" class="form-control" placeholder="price" [(ngModel)]="house.price" #name="ngModel" required>
+          <input type="number" name="price" class="form-control" placeholder="price" [(ngModel)]="house.price" #price="ngModel" required>
         </div>
         <label class="control-label" *ngIf="price.errors && price.touched">
           <ul>
