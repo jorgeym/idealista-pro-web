@@ -1,12 +1,54 @@
-<div *ngIf="house">
-  <div class="house-thumbnail">
-    <img height="300" [src]="house.image" />
-  </div>
+
 
   <div class="house-info">
-    <h2> {{ house.price }}</h2>
-    <h3> {{ house.houseType }} </h3>
+    <div class="row">
+      <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+        <div *ngIf="house">
+          <div class="house-thumbnail">
+            <img height="300" [src]="house.image" />
+          </div>
+        <form (ngSubmit)="onSubmitHouse(houseForm)" #houseForm="ngForm">
+          <div class="form-group" [class.has-error]="houseType.errors && houseType.touched">
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-home"></i>
+              </span>
+              <input type="text" name="houseType" class="form-control" placeholder="{{ house.houseType }}" [(ngModel)]="house.houseType" #houseType="ngModel" required>
+            </div>
+            <label class="control-label" *ngIf="houseType.errors && houseType.touched">
+              <ul>
+                <li *ngIf="houseType.errors.required">Required</li>
+              </ul>
+            </label>
+          </div>
+
+          <div class="form-group" [class.has-error]="price.errors && price.touched">
+            <div class="input-group">
+              <span class="input-group-addon">
+                <i class="fa fa-eur"></i>
+              </span>
+              <input type="number" name="price" class="form-control" placeholder="{{ house.price }}" [(ngModel)]="house.price" #price="ngModel" required>
+            </div>
+            <label class="control-label" *ngIf="price.errors && price.touched">
+              <ul>
+                <li *ngIf="price.errors.required">Required</li>
+              </ul>
+            </label>
+          </div>
+
+
+
+          <div class="form-group" class="has-error" *ngIf="apiError">
+            <label class="control-label">
+              {{ apiError }}
+            </label>
+          </div>
+          <button type="submit" class="btn btn-block btn-primary" [disabled]="!houseForm.valid">Editar</button>
+        </form>
+      </div>
 
     <button class="btn btn-danger" (click)="onClickDelete()">Delete</button>
+
+  </div>
   </div>
 </div>

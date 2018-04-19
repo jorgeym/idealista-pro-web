@@ -2,6 +2,7 @@ import { HousesService } from './../../../shared/services/houses.service';
 import { Component, OnInit } from '@angular/core';
 import { House } from '../../../shared/model/house.model';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-house-item',
@@ -34,4 +35,13 @@ export class HouseItemComponent implements OnInit {
     }
   }
 
+  onSubmitHouse(houseForm: NgForm) {
+      
+      this.housesService.edit(this.house)
+        .subscribe(
+          (house) => {
+            this.router.navigate(['/houses']);
+          }
+      );
+    }
 }

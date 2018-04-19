@@ -1,0 +1,180 @@
+<div class="row">
+
+
+  <form *ngIf="houseList && !houseList.length" (ngSubmit)="onSubmitHouseSearch()" #houseSearchForm="ngForm">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="fa fa-home"></i>
+          </span>
+          <input type="text" name="country" class="form-control" placeholder="country" [(ngModel)]="houseIdealista.country" #country="ngModel" required>
+        </div>
+        <label class="control-label" *ngIf="country.errors && country.touched">
+          <ul>
+            <li *ngIf="country.errors.required">Required</li>
+          </ul>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="fa fa-eur"></i>
+          </span>
+          <input type="text" name="operation" class="form-control" placeholder="operation" [(ngModel)]="houseIdealista.operation" #operation="ngModel" required>
+        </div>
+        <label class="control-label" *ngIf="operation.errors && operation.touched">
+          <ul>
+            <li *ngIf="operation.errors.required">Required</li>
+          </ul>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="fa fa-home"></i>
+          </span>
+          <input type="text" name="operation" class="form-control" placeholder="operation" [(ngModel)]="houseIdealista.operation" #operation="ngModel" required>
+        </div>
+        <label class="control-label" *ngIf="operation.errors && operation.touched">
+          <ul>
+            <li *ngIf="operation.errors.required">Required</li>
+          </ul>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="fa fa-home"></i>
+          </span>
+          <input type="text" name="center" class="form-control" placeholder="center" [(ngModel)]="houseIdealista.center" #center="ngModel" required>
+        </div>
+        <label class="control-label" *ngIf="center.errors && center.touched">
+          <ul>
+            <li *ngIf="center.errors.required">Required</li>
+          </ul>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="fa fa-eur"></i>
+          </span>
+          <input type="text" name="distance" class="form-control" placeholder="Distance" [(ngModel)]="houseIdealista.distance" #distance="ngModel" required>
+        </div>
+        <label class="control-label" *ngIf="distance.errors && distance.touched">
+          <ul>
+            <li *ngIf="distance.errors.required">Required</li>
+          </ul>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="fa fa-eur"></i>
+          </span>
+          <input type="text" name="maxPrice" class="form-control" placeholder="maxPrice" [(ngModel)]="houseIdealista.maxPrice" #maxPrice="ngModel" required>
+        </div>
+        <label class="control-label" *ngIf="maxPrice.errors && maxPrice.touched">
+          <ul>
+            <li *ngIf="maxPrice.errors.required">Required</li>
+          </ul>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="fa fa-eur"></i>
+          </span>
+          <input type="text" name="minPrice" class="form-control" placeholder="minPrice" [(ngModel)]="houseIdealista.minPrice" #minPrice="ngModel" required>
+        </div>
+        <label class="control-label" *ngIf="minPrice.errors && minPrice.touched">
+          <ul>
+            <li *ngIf="minPrice.errors.required">Required</li>
+          </ul>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="fa fa-eur"></i>
+          </span>
+          <input type="text" name="maxSize" class="form-control" placeholder="maxSize" [(ngModel)]="houseIdealista.maxSize" #maxSize="ngModel" required>
+        </div>
+        <label class="control-label" *ngIf="maxSize.errors && maxSize.touched">
+          <ul>
+            <li *ngIf="maxSize.errors.required">Required</li>
+          </ul>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="fa fa-eur"></i>
+          </span>
+          <input type="text" name="minSize" class="form-control" placeholder="minSize" [(ngModel)]="houseIdealista.minSize" #minSize="ngModel" required>
+        </div>
+        <label class="control-label" *ngIf="minSize.errors && minSize.touched">
+          <ul>
+            <li *ngIf="minSize.errors.required">Required</li>
+          </ul>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="fa fa-eur"></i>
+          </span>
+          <input type="boolean" name="flat" class="form-control" placeholder="flat" [(ngModel)]="houseIdealista.flat" #flat="ngModel" required>
+        </div>
+        <label class="control-label" *ngIf="flat.errors && flat.touched">
+          <ul>
+            <li *ngIf="flat.errors.required">Required</li>
+          </ul>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="fa fa-eur"></i>
+          </span>
+          <input type="boolean" name="penthouse" class="form-control" placeholder="penthouse" [(ngModel)]="houseIdealista.penthouse" #penthouse="ngModel" required>
+        </div>
+        <label class="control-label" *ngIf="penthouse.errors && penthouse.touched">
+          <ul>
+            <li *ngIf="penthouse.errors.required">Required</li>
+          </ul>
+        </label>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn btn-block btn-primary" [disabled]="!houseSearchForm.valid">Search</button>
+      </div>
+    </div>
+  </form>
+
+    <div *ngIf="houseList && houseList.length" class="row">
+      <h1>Resultados de Idealista</h1>
+      <div *ngFor="let house of houseList" class="house col-xs-12 col-sm-3">
+        <div>
+          <img [src]="house.url" />
+          <h3> {{ house.address }} </h3>
+          <p> {{ house.price }} </p>
+          <p> {{ house.size }} </p>
+          <p> {{ house.floor }} </p>
+        </div>
+      </div>
+    </div>
+
+
+</div>

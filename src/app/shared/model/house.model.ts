@@ -3,7 +3,7 @@ export class House {
     houseType: string;
     price: number;
     image?: string;
-
+    
     public asFormData(): FormData {
         const data = new FormData();
         data.append('houseType', this.houseType);

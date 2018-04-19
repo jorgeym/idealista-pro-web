@@ -2,6 +2,7 @@ import { CanLeaveHouseCreateGuard } from './shared/guards/can-leave-house-create
 import { HouseBaseComponent } from './components/house/house-base/house-base.component';
 import { HouseCreateComponent } from './components/house/house-create/house-create.component';
 import { HouseSearchComponent } from './components/house/house-search/house-search.component';
+import { HouseSearchIdealistaComponent } from './components/house/house-search-idealista/house-search-idealista.component';
 import { HouseDetailsResolverGuard } from './shared/resolvers/house-details-resolver.guard';
 import { IsAuthenticatedGuard } from './shared/guards/is-authenticated.guard';
 import { SignupComponent } from './components/misc/signup/signup.component';
@@ -23,6 +24,12 @@ export const routes: Routes = [
               //  canActivate: [IsAuthenticatedGuard],
               //  canDeactivate: [CanLeaveHouseCreateGuard], // duda con esto
                 component: HouseSearchComponent
+            },
+            {
+                path: 'search-idealista',
+              //  canActivate: [IsAuthenticatedGuard],
+              //  canDeactivate: [CanLeaveHouseCreateGuard], // duda con esto
+                component: HouseSearchIdealistaComponent
             },
             {
                 path: 'new',

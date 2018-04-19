@@ -23,6 +23,7 @@ import { UsersService } from './shared/services/users.service';
 import { HouseCreateComponent } from './components/house/house-create/house-create.component';
 import { HouseBaseComponent } from './components/house/house-base/house-base.component';
 import { HouseSearchComponent } from './components/house/house-search/house-search.component';
+import { HouseSearchIdealistaComponent } from './components/house/house-search-idealista/house-search-idealista.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { HouseSearchComponent } from './components/house/house-search/house-sear
     SignupComponent,
     HouseCreateComponent,
     HouseBaseComponent,
-    HouseSearchComponent
+    HouseSearchComponent,
+    HouseSearchIdealistaComponent
   ],
   imports: [
     BrowserModule,
