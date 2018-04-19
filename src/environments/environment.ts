@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  baseApi: 'http://localhost:3000'
+  baseApi: 'https://idealista-api-pro.herokuapp.com'
 };
